@@ -6,18 +6,13 @@ import Categories from './Categories';
 class NavigationBar extends Component {
     render() {
         return (
-          <Menu secondary>
+          <Menu stackable>
+          <Menu.Item><img src='https://react.semantic-ui.com/logo.png' /></Menu.Item>
           <Menu.Item name='Merchants' href='../Merchants'/>
           <Menu.Item name='MerchantMenus' href='../MerchantMenus'/>
-
-          <Menu.Menu position='right'>
-            <Menu.Item>
-              <Input icon='search' placeholder='Search...' />
-            </Menu.Item>
-            <Menu.Item
-              name='logout'
-            />
-          </Menu.Menu>
+          <Menu.Item>
+            <Categories />
+          </Menu.Item>
         </Menu>
         );
     }
