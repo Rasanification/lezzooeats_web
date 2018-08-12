@@ -1,13 +1,34 @@
 import React from 'react'
-import { Container, Grid, Header, Icon, Image, Segment } from 'semantic-ui-react'
+import { Container, Grid, Header, Icon, Image,Responsive, Segment } from 'semantic-ui-react'
 import MerchantMenuCard from './MerchantMenuCard';
-import './MerchantMenus.css';
+
+
+/////////////////          css         //////////////////
+const zeropad={
+  padding: 0,
+  margin: 0,
+};
+const background_Image = {
+  padding: 0,
+  margin: 0,
+  backgroundSize: 'cover',
+  backgroundPositionY:'50%',
+  height: 400,
+  width: '100%',
+  backgroundImage: 'url(https://duyt4h9nfnj50.cloudfront.net/resized/1531225329107-w550-65.jpg)',
+};
+const MerchantMenuCardColumn={
+  margin:'50px',
+};
+//////////////////////////////////////////////////////////
+
+
 
 const MerchantMenus = () => (
-  <Container fluid className="zeropad">
-    <div className="zeropad background_Image" style={{ backgroundImage: "url(https://duyt4h9nfnj50.cloudfront.net/resized/1531225329107-w550-65.jpg)" }}>
+  <Container fluid style={zeropad}>
+    <div style={background_Image}>
     <Grid doubling stackable columns={3}>
-       <Grid.Column className="MerchantMenuCardColumn">
+       <Grid.Column style={MerchantMenuCardColumn}>
           <MerchantMenuCard />
        </Grid.Column>
     </Grid>
