@@ -1,5 +1,6 @@
-import React, { Component } from 'react'
-import { Menu, Dropdown } from 'semantic-ui-react'
+import React, { Component } from 'react';
+import { Menu, Dropdown } from 'semantic-ui-react';
+import './MerchantMenus.css';
 
 export default class MerchantFoodCategories extends Component {
 
