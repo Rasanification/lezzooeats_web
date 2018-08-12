@@ -1,6 +1,7 @@
 import React from 'react'
 import { Container, Grid, Header, Icon, Image,Responsive, Segment } from 'semantic-ui-react'
 import MerchantMenuCard from './MerchantMenuCard';
+import MerchantFoodCategories from './MerchantFoodCategories';
 
 
 /////////////////          css         //////////////////
@@ -27,12 +28,13 @@ const MerchantMenuCardColumn={
 const MerchantMenus = () => (
   <Container fluid style={zeropad}>
     <div style={background_Image}>
-    <Grid doubling stackable columns={3}>
-       <Grid.Column style={MerchantMenuCardColumn}>
-          <MerchantMenuCard />
-       </Grid.Column>
-    </Grid>
+      <Grid doubling stackable columns={3}>
+         <Grid.Column style={MerchantMenuCardColumn}>
+            <MerchantMenuCard />
+         </Grid.Column>
+      </Grid>
     </div>
+    <MerchantFoodCategories />
   </Container>
 )
 
