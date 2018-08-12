@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Accordion, Icon, Grid, Image } from 'semantic-ui-react'
+import { Accordion, Icon, Grid, Image,Container } from 'semantic-ui-react'
 import CategoryList from './CategoryList';
 
 export default class Categories extends Component {
@@ -27,17 +27,12 @@ export default class Categories extends Component {
     return (
       <Accordion>
         <Accordion.Title index={0} onClick={this.handleClick}>
-          <Icon name='dropdown' />
+          <Icon name='th' />
           Categories
         </Accordion.Title>
         <Accordion.Content active={activeIndex === 0} style={categoriesStyle}>
-        <Grid>
-          <Grid.Row>
-            <Grid.Column width={8}>
-              <CategoryList/>
-            </Grid.Column>
-          </Grid.Row>
-        </Grid>
+          
+            <CategoryList/>
         </Accordion.Content>
       </Accordion>
     )
