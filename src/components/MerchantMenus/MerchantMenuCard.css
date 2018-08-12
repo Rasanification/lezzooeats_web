@@ -1,0 +1,13 @@
+.MerchantMenuCardContent{
+  border: none;
+}
+.MerchantMenuCardColumn{
+  margin: 50px;
+}
+.header{
+  font-size: 35px !important;
+}
+.MerchantMenuCard{
+  padding: 30px !important;
+  /* background-color: pink; */
+}
