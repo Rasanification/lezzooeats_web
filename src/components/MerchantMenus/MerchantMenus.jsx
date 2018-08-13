@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container, Grid, Header, Icon, Image,Responsive, Segment } from 'semantic-ui-react'
+import { Container, Grid } from 'semantic-ui-react'
 import MerchantMenuCard from './MerchantMenuCard';
 import MerchantFoodCategories from './MerchantFoodCategories';
 
@@ -35,7 +35,7 @@ const MerchantMenus = () => (
       </Grid>
     </div>
     <MerchantFoodCategories />
-    
+
   </Container>
 )
 
