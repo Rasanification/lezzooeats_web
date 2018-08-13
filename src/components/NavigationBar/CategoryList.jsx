@@ -1,10 +1,10 @@
 import React from 'react'
 import { Image, List } from 'semantic-ui-react'
 const horizontalify = {
-  display:'inline-flex'
+  //display:'inline-flex'
 };
 const CategoryList = () => (
-  <List horizontal style={horizontalify}>
+  <List style={horizontalify}>
     <List.Item>
       <Image avatar src='https://react.semantic-ui.com/images/avatar/small/tom.jpg' />
       <List.Content>
@@ -24,6 +24,55 @@ const CategoryList = () => (
       <List.Content>
         <List.Header>Matt</List.Header>
         Top Rated User
+      </List.Content>
+    </List.Item>
+    <List.Item>
+      <Image avatar src='https://react.semantic-ui.com/images/avatar/small/matt.jpg' />
+      <List.Content>
+        <List.Header>Matt</List.Header>
+        Top Rated User
+      </List.Content>
+    </List.Item>
+    <List.Item>
+      <Image avatar src='https://react.semantic-ui.com/images/avatar/small/matt.jpg' />
+      <List.Content>
+        <List.Header>Matt</List.Header>
+        Top Rated User
+      </List.Content>
+    </List.Item>
+    <List.Item>
+      <Image avatar src='https://react.semantic-ui.com/images/avatar/small/matt.jpg' />
+      <List.Content>
+        <List.Header>Matt</List.Header>
+        Top Rated User
+      </List.Content>
+    </List.Item>
+    <List.Item>
+      <Image avatar src='https://react.semantic-ui.com/images/avatar/small/matt.jpg' />
+      <List.Content>
+        <List.Header>Matt</List.Header>
+        Top Rated User
+      </List.Content>
+    </List.Item>
+    <List.Item>
+      <Image avatar src='https://react.semantic-ui.com/images/avatar/small/matt.jpg' />
+      <List.Content>
+        <List.Header>Matt</List.Header>
+        Top Rated User
+      </List.Content>
+    </List.Item>
+    <List.Item>
+      <Image avatar src='https://react.semantic-ui.com/images/avatar/small/matt.jpg' />
+      <List.Content>
+        <List.Header>Matt</List.Header>
+        Top Rated User
+      </List.Content>
+    </List.Item>
+        <List.Item>
+      <Image avatar src='https://react.semantic-ui.com/images/avatar/small/tom.jpg' />
+      <List.Content>
+        <List.Header>Tom</List.Header>
+        Top Contributor
       </List.Content>
     </List.Item>
   </List>

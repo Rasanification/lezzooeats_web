@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
-import { Accordion, Icon, Grid, Image,Container } from 'semantic-ui-react'
+import { Accordion, Icon, Grid, Image,Container,Menu } from 'semantic-ui-react'
 import CategoryList from './CategoryList';
+import CategoryListImage from './CategoryListImage';
 
 export default class Categories extends Component {
   state = { activeIndex: null }
@@ -31,11 +32,63 @@ export default class Categories extends Component {
           Categories
         </Accordion.Title>
         <Accordion.Content active={activeIndex === 0} style={categoriesStyle}>
-          
-            <CategoryList/>
+        <Grid columns={2} stackable>
+          <Grid.Column>
+            <Grid.Row>
+              <p>All categories</p>
+            </Grid.Row>
+            <Grid.Row>
+                  <Grid textAlign='center' columns={3}>
+                    <Grid.Row>
+                      <Grid.Column>
+                        <Menu fluid vertical>
+                          <Menu.Item className='header'>Cats</Menu.Item>
+                        </Menu>
+                      </Grid.Column>
+                      <Grid.Column>
+                        <Menu fluid vertical>
+                          <Menu.Item className='header'>Dogs</Menu.Item>
+                          <Menu.Item>Poodle</Menu.Item>
+                          <Menu.Item>Cockerspaniel</Menu.Item>
+                        </Menu>
+                      </Grid.Column>
+                      <Grid.Column>
+                        <Menu fluid vertical>
+                          <Menu.Item className='header'>Monkeys</Menu.Item>
+                        </Menu>
+                      </Grid.Column>
+                    </Grid.Row>
+                  </Grid>
+            </Grid.Row>
+          </Grid.Column>
+          <Grid.Column>
+            <Grid>
+            <Grid.Row>
+              <p>Popular categories</p>
+            </Grid.Row>
+            <Grid.Row>
+              <Grid.Column width={3} >
+                <Image src='https://react.semantic-ui.com/images/wireframe/image.png' fluid/>
+              </Grid.Column>
+              <Grid.Column width={3} >
+                <Image src='https://react.semantic-ui.com/images/wireframe/image.png' fluid/>
+              </Grid.Column>
+            </Grid.Row>
+            <Grid.Row >
+              <Grid.Column width={3} >
+                <Image src='https://react.semantic-ui.com/images/wireframe/image.png' fluid/>
+              </Grid.Column>
+              <Grid.Column width={3} >
+                <Image src='https://react.semantic-ui.com/images/wireframe/image.png' fluid/>
+              </Grid.Column>
+            </Grid.Row>
+            </Grid>
+          </Grid.Column>
+
+        </Grid>
+
         </Accordion.Content>
       </Accordion>
     )
   }
 }
-
