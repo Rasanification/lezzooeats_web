@@ -1,23 +1,23 @@
-import React from 'react'
-import { Card, Icon, Image } from 'semantic-ui-react'
+import React, {Component} from 'react'
+import {Card, Icon, Image} from 'semantic-ui-react'
 
-const MerchantCard = () => (
-  <Card fluid>
-    <Image src='https://react.semantic-ui.com/images/avatar/large/matthew.png' />
-    <Card.Content>
-      <Card.Header>Matthew</Card.Header>
-      <Card.Meta>
-        <span className='date'>Joined in 2015</span>
-      </Card.Meta>
-      <Card.Description>Matthew is a musician living in Nashville.</Card.Description>
-    </Card.Content>
-    <Card.Content extra>
-      <a>
-        <Icon name='user' />
-        22 Friends
-      </a>
-    </Card.Content>
-  </Card>
-);
-// this is comment
+class MerchantCard extends Component {
+  constructor(props) {
+    super(props)
+  }
+  render() {
+    const merchant=this.props.merchant
+    return (<Card fluid="fluid">
+      <Image src={merchant.merchant_image}>
+      <Image src={merchant.merchant_logo} size="mini"/>
+      </Image>
+      <Card.Content>
+        <Card.Header center>{merchant.merchant_name.en}</Card.Header>
+        <Card.Description>{merchant.merchant_area.en}</Card.Description>
+      </Card.Content>
+      <Card.Content extra>
+      </Card.Content>
+    </Card>)
+  }
+}
 export default MerchantCard

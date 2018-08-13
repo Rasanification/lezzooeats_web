@@ -68,18 +68,18 @@ export default class Categories extends Component {
             </Grid.Row>
             <Grid.Row>
               <Grid.Column width={3} >
-                <Image src='https://react.semantic-ui.com/images/wireframe/image.png' fluid/>
+                <CategoryListImage/>
               </Grid.Column>
               <Grid.Column width={3} >
-                <Image src='https://react.semantic-ui.com/images/wireframe/image.png' fluid/>
+                <CategoryListImage/>
               </Grid.Column>
             </Grid.Row>
             <Grid.Row >
               <Grid.Column width={3} >
-                <Image src='https://react.semantic-ui.com/images/wireframe/image.png' fluid/>
+                <CategoryListImage/>
               </Grid.Column>
               <Grid.Column width={3} >
-                <Image src='https://react.semantic-ui.com/images/wireframe/image.png' fluid/>
+                <CategoryListImage/>
               </Grid.Column>
             </Grid.Row>
             </Grid>
