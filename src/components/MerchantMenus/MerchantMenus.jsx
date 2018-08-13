@@ -35,6 +35,7 @@ const MerchantMenus = () => (
       </Grid>
     </div>
     <MerchantFoodCategories />
+    
   </Container>
 )
 

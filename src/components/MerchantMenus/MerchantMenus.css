@@ -2,3 +2,6 @@
   border:none;
   box-shadow:none;
 }
+body{
+  position: relative;
+}
