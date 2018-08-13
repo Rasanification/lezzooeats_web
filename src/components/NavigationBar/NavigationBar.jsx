@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Input, Menu, Accordion, Icon } from 'semantic-ui-react';
+import { Container,Button, Input, Menu, Accordion, Icon, Grid } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 import Categories from './Categories';
 
