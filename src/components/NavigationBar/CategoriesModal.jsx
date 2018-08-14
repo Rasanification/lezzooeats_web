@@ -34,8 +34,8 @@ class CategoriesModal extends Component {
               {this.state.categories.map((category) =>{
                     return(
                       <Grid.Column>
-                        <CategoryCard category={category}/>
-
+                        <CategoryCard category={category} />
+                        <p>{category.merchant_specialty_id}</p>
                       </Grid.Column>
                     )
                   })
