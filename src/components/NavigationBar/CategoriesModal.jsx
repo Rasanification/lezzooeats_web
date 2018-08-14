@@ -2,8 +2,20 @@ import React, { Component } from 'react'
 import { Button, Header, Image, Modal, Icon, Grid,Menu } from 'semantic-ui-react'
 import CategoryListImage from './CategoryListImage';
 import CategoryCard from './CategoryCard';
+import {getCategories} from '../fetch/Categories';
 
 class CategoriesModal extends Component {
+    constructor(props){
+      super(props);
+      this.state = {categories:[]};
+    }
+    componentDidMount() {
+      getCategories().then((result)=> {
+        this.setState({categories:result.data});
+      }).catch((error)=>{
+
+      })
+    }
   state = { open: false }
 
   show = dimmer => () => this.setState({ dimmer, open: true })
@@ -19,40 +31,15 @@ class CategoriesModal extends Component {
           <Modal.Header>Select a Category</Modal.Header>
           <Modal.Content>
           <Grid doubling stackable columns={4}>
-                  <Grid.Column>
-                      <CategoryCard />
-                  </Grid.Column>
-                  <Grid.Column>
-                      <CategoryCard />
-                  </Grid.Column>
-                  <Grid.Column>
-                      <CategoryCard />
-                  </Grid.Column>
-                  <Grid.Column>
-                      <CategoryCard />
-                  </Grid.Column>
-                  <Grid.Column>
-                      <CategoryCard />
-                  </Grid.Column>
-                  <Grid.Column>
-                      <CategoryCard />
-                  </Grid.Column>                    <Grid.Column>
-                      <CategoryCard />
-                  </Grid.Column>
-                  <Grid.Column>
-                      <CategoryCard />
-                  </Grid.Column>
-                  <Grid.Column>
-                      <CategoryCard />
-                  </Grid.Column>                    <Grid.Column>
-                      <CategoryCard />
-                  </Grid.Column>
-                  <Grid.Column>
-                      <CategoryCard />
-                  </Grid.Column>
-                  <Grid.Column>
-                      <CategoryCard />
-                  </Grid.Column>
+              {this.state.categories.map((category) =>{
+                    return(
+                      <Grid.Column>
+                        <CategoryCard category={category}/>
+
+                      </Grid.Column>
+                    )
+                  })
+              }
           </Grid>
           </Modal.Content>
           <Modal.Actions>

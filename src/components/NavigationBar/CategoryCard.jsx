@@ -1,13 +1,21 @@
-import React from 'react'
-import { Card, Icon, Image } from 'semantic-ui-react'
+import React, {Component} from 'react'
+import {Card, Icon, Image} from 'semantic-ui-react'
 
-const CategoryCard = () => (
-  <Card fluid>
-    <Image src='https://react.semantic-ui.com/images/avatar/large/matthew.png' />
-    <Card.Content textAlign='center'>
-      <Card.Header>Category Name</Card.Header>
-    </Card.Content>
-  </Card>
-);
-// this is comment
+class CategoryCard extends Component {
+  constructor(props) {
+    super(props)
+  }
+  render() {
+    const category=this.props.category;
+    return (
+      <Card fluid="fluid">
+      <Image src={category.merchant_specialty_background} />
+      <Card.Content textAlign="center">
+        <Card.Header center>{category.merchant_specialty_name.en}</Card.Header>
+      </Card.Content>
+
+    </Card>
+  )
+  }
+}
 export default CategoryCard
