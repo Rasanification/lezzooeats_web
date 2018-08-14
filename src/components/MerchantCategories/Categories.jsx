@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import { Container,Grid, Input } from 'semantic-ui-react';
-import MerchantCard from './MerchantCard';
+import { Container, Grid, Input } from 'semantic-ui-react';
+import MerchantCard from '../Merchants/MerchantCard';
 import {getMerchants} from '../fetch/Merchants';
-class Merchants extends Component {
+
+class MerchantCategories extends Component {
     constructor(props){
       super(props);
       this.state = {merchants:[]};
@@ -34,4 +35,4 @@ class Merchants extends Component {
     }
 }
 // this is comment
-export default Merchants;
+export default MerchantCategories;
