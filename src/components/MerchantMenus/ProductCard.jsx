@@ -16,12 +16,14 @@ export default class CardExampleImageCard extends Component {
       fontSize:22,
     };
     const styleProductCardMeta={
-      whiteSpace: 'nowrap',
+      // lineHeight: '1.5em',
+      // height: '3em',
       overflow: 'hidden',
-      textOverflow: '----',
-      fontSize:16,
-      marginTop:4,
-      marginBottom:4,
+      whiteSpace: 'nowrap',
+      textOverflow: 'ellipsis',
+
+      marginTop:8,
+      marginBottom:20,
     };
     return (
       <Card fluid>
@@ -29,7 +31,11 @@ export default class CardExampleImageCard extends Component {
           <Grid.Column  width={11}>
             <Card.Content>
               <Card.Header style={styleProductCardHeader}>9 Chicken McNuggets®</Card.Header>
-              <Card.Meta style={styleProductCardMeta}>For nutritional and allergen information for our food please visit http://mcdonalds.co.uk/nutrition. Beverages affected by the Governments Soft Drinks Industry Levy are subject to an additional charge which is included in the price shown.</Card.Meta>
+              <Card.Meta >
+                <p style={styleProductCardMeta}>
+                  For nutritional and allergen information for our food please visit http://mcdonalds.co.uk/nutrition. Beverages affected by the Governments Soft Drinks Industry Levy are subject to an additional charge which is included in the price shown.
+                </p>
+              </Card.Meta>
               <Card.Description>GBP3.49</Card.Description>
             </Card.Content>
 

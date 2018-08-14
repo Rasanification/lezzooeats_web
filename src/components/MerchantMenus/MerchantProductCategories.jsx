@@ -79,7 +79,7 @@ export default class MerchantProductCategories extends Component {
               </Menu>
             </Segment>
           </Sticky>
-          <Grid centered columns={2}>
+          <Grid centered stackable fluid columns={2}>
             <Grid.Column width={10}>
               <div>
                 <section id="section-1">
