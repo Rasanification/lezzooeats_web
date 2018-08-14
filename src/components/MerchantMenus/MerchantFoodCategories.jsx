@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Grid, Menu, Dropdown, Sticky, Segment} from 'semantic-ui-react';
 import './MerchantMenus.css';
 import Scrollspy from 'react-scrollspy';
+import ProductCard from './ProductCard';
 
 export default class MerchantFoodCategories extends Component {
   /////////// sticky ///////////
@@ -75,8 +76,8 @@ export default class MerchantFoodCategories extends Component {
             <Grid.Column width={10}>
               <div>
                 <section id="section-1">
-                  <div style={{"min-height":'500px'},{background:'red'}}>1
-                    <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+                  <div style={{background:'red'}}>
+                    <ProductCard/><ProductCard/>
                   </div>
                 </section>
                 <section id="section-2">
@@ -114,7 +115,7 @@ export default class MerchantFoodCategories extends Component {
             <Grid.Column width={6}>
               <Sticky context={contextRef} offset={100} >
                 <Segment style={zeropad}>
-                  <h1>>:(</h1>
+                  <ProductCard/>
                 </Segment>
               </Sticky>
             </Grid.Column>
