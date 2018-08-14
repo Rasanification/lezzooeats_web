@@ -3,6 +3,7 @@ import { Grid, Menu, Dropdown, Sticky, Segment, List, Item} from 'semantic-ui-re
 import './MerchantMenus.css';
 import Scrollspy from 'react-scrollspy';
 import ProductCard from './ProductCard';
+import CheckoutCard from './CheckoutCard';
 
 export default class MerchantProductCategories extends Component {
   /////////// sticky ///////////
@@ -27,8 +28,12 @@ export default class MerchantProductCategories extends Component {
       margin:0,
       padding:0,
     };
+    const stickyCheckoutCard={
+      marginTop:165,
+      marginRight:90,
+    };
     const styleDivProduct={
-      margin:50,
+      margin:90,
     };
     const styleHeaderProduct={
       marginTop:40,
@@ -79,13 +84,13 @@ export default class MerchantProductCategories extends Component {
               </Menu>
             </Segment>
           </Sticky>
-          <Grid centered stackable fluid columns={2}>
+          <Grid stackable fluid centered  columns={2}>
             <Grid.Column width={10}>
               <div>
                 <section id="section-1">
                   <div style={styleDivProduct}>
                     <h1 style={styleHeaderProduct}>Breakfast Boxes</h1>
-                    <Grid columns={2}>
+                    <Grid stackable fluid columns={2}>
                       <Grid.Row>
                         <Grid.Column width={8}>
                           <ProductCard/>
@@ -115,7 +120,7 @@ export default class MerchantProductCategories extends Component {
 
                 </section>
                 <section id="section-2">
-                  <div style={{height:'500px'},{background:'green'}}>2
+                  <div style={{height:'500px'},{background:'pink'}}>2
                   <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
                   </div>
                 </section>
@@ -140,16 +145,16 @@ export default class MerchantProductCategories extends Component {
                   </div>
                 </section>
                 <section id="section-7">
-                  <div style={{height:500},{background:'black'}}>5
+                  <div style={{height:500},{background:'green'}}>5
                     <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
                   </div>
                 </section>
               </div>
             </Grid.Column>
             <Grid.Column width={6}>
-              <Sticky context={contextRef} offset={100} >
+              <Sticky style={stickyCheckoutCard} context={contextRef} offset={100} >
                 <Segment style={zeropad}>
-                  <ProductCard/>
+                  <CheckoutCard/>
                 </Segment>
               </Sticky>
             </Grid.Column>

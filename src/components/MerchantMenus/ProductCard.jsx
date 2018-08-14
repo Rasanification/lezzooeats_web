@@ -26,9 +26,9 @@ export default class CardExampleImageCard extends Component {
       marginBottom:20,
     };
     return (
-      <Card fluid>
+      <Card stackable fluid>
         <Grid style={styleProductCardContent}>
-          <Grid.Column  width={11}>
+          <Grid.Column  width={9}>
             <Card.Content>
               <Card.Header style={styleProductCardHeader}>9 Chicken McNuggets®</Card.Header>
               <Card.Meta >
@@ -40,7 +40,7 @@ export default class CardExampleImageCard extends Component {
             </Card.Content>
 
           </Grid.Column>
-          <Grid.Column width={5} style={zeropad}>
+          <Grid.Column width={7} style={zeropad}>
             <Image style={zeropad} src='https://uk-homedelivery-prod-images.s3.amazonaws.com/UE-mobile_uk_9Nuggets.png' />
           </Grid.Column>
         </Grid>
