@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import { Grid, Menu, Dropdown, Sticky, Segment} from 'semantic-ui-react';
+import { Grid, Menu, Dropdown, Sticky, Segment, List, Item} from 'semantic-ui-react';
 import './MerchantMenus.css';
 import Scrollspy from 'react-scrollspy';
 import ProductCard from './ProductCard';
 
-export default class MerchantFoodCategories extends Component {
+export default class MerchantProductCategories extends Component {
   /////////// sticky ///////////
   state = { active: true }
   handleContextRef = contextRef => this.setState({ contextRef })
@@ -26,6 +26,13 @@ export default class MerchantFoodCategories extends Component {
     const zeropad={
       margin:0,
       padding:0,
+    };
+    const styleDivProduct={
+      margin:50,
+    };
+    const styleHeaderProduct={
+      marginTop:40,
+      marginBottom:40,
     };
     ////////////////////////////////////
     const { active, contextRef } = this.state
@@ -76,9 +83,36 @@ export default class MerchantFoodCategories extends Component {
             <Grid.Column width={10}>
               <div>
                 <section id="section-1">
-                  <div style={{background:'red'}}>
-                    <ProductCard/><ProductCard/>
+                  <div style={styleDivProduct}>
+                    <h1 style={styleHeaderProduct}>Breakfast Boxes</h1>
+                    <Grid columns={2}>
+                      <Grid.Row>
+                        <Grid.Column width={8}>
+                          <ProductCard/>
+                        </Grid.Column>
+                        <Grid.Column width={8}>
+                          <ProductCard/>
+                        </Grid.Column>
+                      </Grid.Row>
+                      <Grid.Row>
+                        <Grid.Column width={8}>
+                          <ProductCard/>
+                        </Grid.Column>
+                        <Grid.Column width={8}>
+                          <ProductCard/>
+                        </Grid.Column>
+                      </Grid.Row>
+                      <Grid.Row>
+                        <Grid.Column width={8}>
+                          <ProductCard/>
+                        </Grid.Column>
+                        <Grid.Column width={8}>
+                          <ProductCard/>
+                        </Grid.Column>
+                      </Grid.Row>
+                    </Grid>
                   </div>
+
                 </section>
                 <section id="section-2">
                   <div style={{height:'500px'},{background:'green'}}>2
