@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import {Card, Icon, Image} from 'semantic-ui-react'
+import FittedImg from 'react-fitted-img';
 
 class CategoryCard extends Component {
   constructor(props) {
@@ -9,7 +10,7 @@ class CategoryCard extends Component {
     const category=this.props.category;
     return (
       <Card fluid="fluid">
-      <Image src={category.merchant_specialty_background} />
+      <FittedImg fit="cover" alt="food" src={category.merchant_specialty_background} height="300"/>
       <Card.Content textAlign="center">
         <Card.Header center>{category.merchant_specialty_name.en}</Card.Header>
       </Card.Content>
