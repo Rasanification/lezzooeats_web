@@ -1,8 +1,28 @@
-import React from 'react'
+import React, {Component} from 'react'
 import { Card, Label } from 'semantic-ui-react'
 
-/////////////////          css         //////////////////
 
+
+const header=['PAUL (Kingsway)'].join(' ')
+const description = [
+  'Bakery • Sandwich • Pastry',
+  'test',
+].join(' ')
+export default class MerchantMenuCardClass extends Component {
+  render(){
+    return(
+      <Card style={MerchantMenuCard} fluid>
+        <Card.Content style={MerchantMenuCardContentHeader} header={header} />
+        <Card.Content style={MerchantMenuCardContentDescription} description={description} />
+        <Card.Content>
+          <Label>
+            25–35 min
+          </Label>
+        </Card.Content>
+      </Card>
+    )
+  }
+}
 const MerchantMenuCard={
   padding: 30,
 };
@@ -13,23 +33,3 @@ const MerchantMenuCardContentDescription={
 const MerchantMenuCardContentHeader={
   fontSize: 25,
 };
-/////////////////////////////////////////////////////////
-
-const header=['PAUL (Kingsway)'].join(' ')
-const description = [
-  'Bakery • Sandwich • Pastry',
-  'test',
-].join(' ')
-const CardExampleExtraContent = () => (
-  <Card style={MerchantMenuCard} fluid>
-    <Card.Content style={MerchantMenuCardContentHeader} header={header} />
-    <Card.Content style={MerchantMenuCardContentDescription} description={description} />
-    <Card.Content>
-      <Label>
-        25–35 min
-      </Label>
-    </Card.Content>
-  </Card>
-)
-// this is comment
-export default CardExampleExtraContent

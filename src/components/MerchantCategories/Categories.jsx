@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Container, Grid, Input } from 'semantic-ui-react';
 import MerchantCard from '../Merchants/MerchantCard';
-import {getCategoryMerchants} from '../fetch/CategoryMerchants';
+import { getMerchantsBySpecialty } from '../fetch/Merchants';
 
 class MerchantCategories extends Component {
     constructor(props){
@@ -9,7 +9,7 @@ class MerchantCategories extends Component {
       this.state = {merchants:[]};
     }
     componentDidMount() {
-      getCategoryMerchants(this.props.match.params.id).then((result)=> {
+      getMerchantsBySpecialty(this.props.match.params.id).then((result)=> {
         this.setState({merchants:result.data});
       }).catch((error)=>{
       })
@@ -21,10 +21,10 @@ class MerchantCategories extends Component {
           <Input size='massive' icon='search' placeholder='Search...' fluid/>
           <br />
           <Grid doubling stackable columns={3}>
-            {this.state.merchants.map((categorymerchant) =>{
+            {this.state.merchants.map((merchant) =>{
               return(
                 <Grid.Column>
-                  <MerchantCard merchant={categorymerchant}/>
+                  <MerchantCard merchant={merchant}/>
                 </Grid.Column>
               )
             })

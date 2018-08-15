@@ -15,7 +15,7 @@ class App extends Component {
         <div>
           <Navbar/>
           <Route exact path="/Merchants" component={Merchants} />
-          <Route path="/MerchantMenus" component={MerchantMenus} />
+          <Route path="/MerchantMenus/:id" component={MerchantMenus} />
           <Route path="/MerchantCategories/:id" component={MerchantCategories} />
 
         </div>

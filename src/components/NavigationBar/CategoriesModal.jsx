@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Button, Header, Image, Modal, Icon, Grid,Menu } from 'semantic-ui-react'
 import CategoryListImage from './CategoryListImage';
 import CategoryCard from './CategoryCard';
-import {getCategories} from '../fetch/Categories';
+import {getAllSpecialities} from '../fetch/Specialities';
 
 class CategoriesModal extends Component {
     constructor(props){
@@ -10,7 +10,7 @@ class CategoriesModal extends Component {
       this.state = {categories:[]};
     }
     componentDidMount() {
-      getCategories().then((result)=> {
+      getAllSpecialities().then((result)=> {
         this.setState({categories:result.data});
       }).catch((error)=>{
 
