@@ -1,17 +1,16 @@
 import React, { Component } from 'react';
 import { Container,Grid, Input } from 'semantic-ui-react';
 import MerchantCard from './MerchantCard';
-import {getMerchants} from '../fetch/Merchants';
+import { getAllMerchants } from '../fetch/Merchants';
 class Merchants extends Component {
     constructor(props){
       super(props);
       this.state = {merchants:[]};
     }
     componentDidMount() {
-      getMerchants().then((result)=> {
+      getAllMerchants().then((result)=> {
         this.setState({merchants:result.data});
       }).catch((error)=>{
-
       })
     }
     render() {

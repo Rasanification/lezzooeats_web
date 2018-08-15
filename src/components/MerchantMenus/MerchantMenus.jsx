@@ -1,10 +1,29 @@
-import React from 'react'
+import React, {Component} from 'react'
 import { Container, Grid } from 'semantic-ui-react'
 import MerchantMenuCard from './MerchantMenuCard';
 import MerchantProductCategories from './MerchantProductCategories';
+class MerchantMenus extends Component{
+  constructor(props){
+    super(props);
+    this.state = {merchants:[]};
+  }
 
+  render(){
+  return(
+    <Container fluid style={zeropad}>
+    <div style={background_Image}>
+      <Grid doubling stackable columns={3}>
+         <Grid.Column style={MerchantMenuCardColumn}>
+            <MerchantMenuCard currentMerchant={this.props.match.params.id} />
+         </Grid.Column>
+      </Grid>
+    </div>
+    <MerchantProductCategories currentMerchant={this.props.match.params.id} />
 
-/////////////////          css         //////////////////
+  </Container>
+  )
+}
+}
 const zeropad={
   padding: 0,
   margin: 0,
@@ -21,22 +40,5 @@ const background_Image = {
 const MerchantMenuCardColumn={
   margin:'50px',
 };
-//////////////////////////////////////////////////////////
-
-
-
-const MerchantMenus = () => (
-  <Container fluid style={zeropad}>
-    <div style={background_Image}>
-      <Grid doubling stackable columns={3}>
-         <Grid.Column style={MerchantMenuCardColumn}>
-            <MerchantMenuCard />
-         </Grid.Column>
-      </Grid>
-    </div>
-    <MerchantProductCategories />
-
-  </Container>
-)
 
 export default MerchantMenus
