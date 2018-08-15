@@ -15,10 +15,10 @@ class Merchants extends Component {
     }
     render() {
         return (
-        <Container>
+        <div style={{marginLeft:75,marginRight:75}}>
           <Input size='massive' icon='search' placeholder='Search...' fluid/>
           <br />
-          <Grid doubling stackable columns={3}>
+          <Grid doubling stackable columns={3} style={{margin:0}}>
             {this.state.merchants.map((merchant) =>{
               return(
                 <Grid.Column>
@@ -28,7 +28,7 @@ class Merchants extends Component {
             })
           }
           </Grid>
-        </Container>
+        </div>
         );
     }
 }
