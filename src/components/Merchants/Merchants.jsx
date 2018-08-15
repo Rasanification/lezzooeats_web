@@ -1,12 +1,8 @@
 import React, { Component } from 'react';
 import { Container,Grid, Input } from 'semantic-ui-react';
 import MerchantCard from './MerchantCard';
-<<<<<<< HEAD
 import ProductModal from './ProductModal';
-import {getMerchants} from '../fetch/Merchants';
-=======
 import { getAllMerchants } from '../fetch/Merchants';
->>>>>>> 00c9f028e114cf2cbd4d30756ffbc4b225e43d0b
 class Merchants extends Component {
     constructor(props){
       super(props);
