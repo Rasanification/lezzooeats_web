@@ -6,7 +6,7 @@ import { Button, Header, Icon, Image, Modal, Form, Radio, Checkbox, Input, Grid,
 class ProductModal extends Component {
   constructor(props){
     super(props);
-    this.state={amount:1};
+    this.state={amount:1,open: false};
     this.incLabel = this.incLabel.bind(this);
     this.decLabel = this.decLabel.bind(this);
   }
@@ -19,13 +19,27 @@ class ProductModal extends Component {
       this.setState({ amount: this.state.amount - 1 });
     }
   }
+
+  show = dimmer => () => this.setState({ dimmer, open: true })
+  close = () => this.setState({ open: false })
+
   render(){
 
+    const { open, dimmer } = this.state
+
     return(
-      <Modal size='small' trigger={<Button>Order</Button>} style={{margin:0,padding:0}}>
+      <Modal
+        dimmer={dimmer} open={open} onClose={this.close}
+        size='small'
+        trigger={<Button onClick={this.show(true)} >Order</Button>}
+        style={{margin:0,padding:0}}
+        >
         <Modal.Content scrolling style={{maxHeight:500,height:500,margin:0,padding:0}}>
           <div style={{height:350,width:'100%',margin:0,padding:0,backgroundSize:'cover',backgroundPositionY:'50%',backgroundImage: 'url(https://duyt4h9nfnj50.cloudfront.net/sku/29de2d243e25d5f816fa181923204170)',}}>
-
+          
+            <Button onClick={this.close} style={{height:50,width:50,borderRadius:100,padding:0,paddingLeft:10,background:'transparent',float:'right',margin:20,color:'white'}}>
+              <Icon name='close'/>
+            </Button>
           </div>
           <Modal.Description style={{margin:50}}>
             <Header style={{fontSize:38}}>Manager Special Meal</Header>
