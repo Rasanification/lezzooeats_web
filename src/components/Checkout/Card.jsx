@@ -36,7 +36,7 @@ export default class CheckoutCard extends Component {
           <Card.Header style={styleHeaderCheckoutCard}>
             <p style={{fontSize:16,color:'#c7c3c3'}}>Your order from</p>
             <p style={{fontSize:24}}>PAUL (Stand)</p>
-            <Button style={styleBtnHeaderCheckoutCard} fluid stackable negative>Checkout</Button>
+            <Button style={styleBtnHeaderCheckoutCard} fluid stackable primary>Checkout</Button>
           </Card.Header>
         </Card.Content>
         <Card.Content>
@@ -62,7 +62,7 @@ export default class CheckoutCard extends Component {
         <Card.Content>
           <Card.Header style={styleHeaderCheckoutCard}>
             <Input style={{margin:20,marginTop:10}} fluid placeholder='Add note (extra sauce, no onions etc.)' />
-            <Grid>
+            <Grid stackable>
               <Grid.Row columns={2} style={{margin:0, padding:0, color:'gray'}}>
                 <Grid.Column style={{textAlign: 'left', fontSize:16,}}>Subtotal (1 item)</Grid.Column>
                 <Grid.Column style={{textAlign: 'right', fontSize:16,}}>GBP2</Grid.Column>
