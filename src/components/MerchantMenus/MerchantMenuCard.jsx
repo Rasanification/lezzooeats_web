@@ -1,22 +1,22 @@
 import React, {Component} from 'react'
 import { Card, Label } from 'semantic-ui-react'
 
-
-
-const header=['PAUL (Kingsway)'].join(' ')
-const description = [
-  'Bakery • Sandwich • Pastry',
-  'test',
-].join(' ')
 export default class MerchantMenuCardClass extends Component {
+
+  constructor(props) {
+    super(props);
+  }
+
   render(){
+    var merchant=this.props.merchant
     return(
       <Card style={MerchantMenuCard} fluid>
-        <Card.Content style={MerchantMenuCardContentHeader} header={header} />
-        <Card.Content style={MerchantMenuCardContentDescription} description={description} />
+        <Card.Content style={MerchantMenuCardContentHeader} header={merchant ? merchant.merchant_name.en : null} />
+        <Card.Content style={MerchantMenuCardContentDescription} description={merchant ? merchant.merchant_name.en : null} />
         <Card.Content>
           <Label>
-            25–35 min
+          {merchant ? merchant.merchant_delivery_time : null} min
+          
           </Label>
         </Card.Content>
       </Card>

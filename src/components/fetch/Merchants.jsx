@@ -9,7 +9,15 @@ export function getAllMerchants(){
     })
   })
 }
-
+export function getSingleMerchant(merchantID){
+  return new Promise((resolve, reject) => {
+    axios.get('http://api3.lezzooeats.com/app/merchants/'+merchantID).then((result) => {
+      resolve(result)
+    }).catch((error) => {
+      reject(error)
+    })
+  })
+}
 export function getMerchantsBySpecialty(specialtyID){
   return new Promise((resolve, reject) => {
     axios.get(`http://api3.lezzooeats.com/app/specialities/${specialtyID}/merchants?city=erbil`).then((result) => {

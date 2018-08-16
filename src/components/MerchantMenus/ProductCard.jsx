@@ -6,10 +6,6 @@ export default class CardExampleImageCard extends Component {
     super(props);
   }
 
-  componentDidMount() {
-    console.log(this.props.product);
-  }
-
   
   render() {
     const product =this.props.product;
