@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import { Card, Icon, Button, Dropdown, Grid } from 'semantic-ui-react'
+import { Card, Icon, Button, Dropdown, Grid, Input, } from 'semantic-ui-react'
 
 export default class CheckoutCard extends Component {
   render() {
@@ -34,7 +34,9 @@ export default class CheckoutCard extends Component {
       <Card fluid style={sizeCardCheckOutCard}>
         <Card.Content>
           <Card.Header style={styleHeaderCheckoutCard}>
-            <Button href="../Checkout" style={styleBtnHeaderCheckoutCard} fluid stackable negative>Checkout</Button>
+            <p style={{fontSize:16,color:'#c7c3c3'}}>Your order from</p>
+            <p style={{fontSize:24}}>PAUL (Stand)</p>
+            <Button style={styleBtnHeaderCheckoutCard} fluid stackable negative>Checkout</Button>
           </Card.Header>
         </Card.Content>
         <Card.Content>
@@ -59,10 +61,23 @@ export default class CheckoutCard extends Component {
         </Card.Content>
         <Card.Content>
           <Card.Header style={styleHeaderCheckoutCard}>
-            <div>
-              <div style={{float:'left'}}>Subtotal (1 item)</div>
-              <div style={{float:'right'}}>GBP7.99</div>
-            </div>
+            <Input style={{margin:20,marginTop:10}} fluid placeholder='Add note (extra sauce, no onions etc.)' />
+            <Grid>
+              <Grid.Row columns={2} style={{margin:0, padding:0, color:'gray'}}>
+                <Grid.Column style={{textAlign: 'left', fontSize:16,}}>Subtotal (1 item)</Grid.Column>
+                <Grid.Column style={{textAlign: 'right', fontSize:16,}}>GBP2</Grid.Column>
+              </Grid.Row>
+
+              <Grid.Row columns={2} style={{margin:0, padding:0, color:'gray'}}>
+                <Grid.Column style={{textAlign: 'left', fontSize:16,}}>Delivery Fee</Grid.Column>
+                <Grid.Column style={{textAlign: 'right', fontSize:16,}}>GBP1</Grid.Column>
+              </Grid.Row>
+
+              <Grid.Row columns={2} style={{margin:0, padding:10}}>
+                <Grid.Column style={{textAlign: 'left',}}>Total</Grid.Column>
+                <Grid.Column style={{textAlign: 'right',}}>GBP3</Grid.Column>
+              </Grid.Row>
+            </Grid>
           </Card.Header>
         </Card.Content>
         {/*<Card.Content style={styleExtraCheckoutCard} extra>

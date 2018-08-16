@@ -36,7 +36,6 @@ class ProductModal extends Component {
         >
         <Modal.Content scrolling style={{maxHeight:500,height:500,margin:0,padding:0}}>
           <div style={{height:350,width:'100%',margin:0,padding:0,backgroundSize:'cover',backgroundPositionY:'50%',backgroundImage: 'url(https://duyt4h9nfnj50.cloudfront.net/sku/29de2d243e25d5f816fa181923204170)',}}>
-          
             <Button onClick={this.close} style={{height:50,width:50,borderRadius:100,padding:0,paddingLeft:10,background:'transparent',float:'right',margin:20,color:'white'}}>
               <Icon name='close'/>
             </Button>
