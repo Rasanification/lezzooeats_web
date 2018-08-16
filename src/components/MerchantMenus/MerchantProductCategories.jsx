@@ -4,40 +4,16 @@ import './MerchantMenus.css';
 import Scrollspy from 'react-scrollspy';
 import ProductCard from './ProductCard';
 import CheckoutCard from './CheckoutCard';
-import { getMerchantCategories, getMerchantProducts } from '../fetch/Merchants';
 
 export default class MerchantProductCategories extends Component {
   constructor(props) {
     super(props);
-    this.state = { merchantCategories: [], merchantProducts: [], sections: [] };
   }
-  /////////// sticky ///////////
 
   state = { active: true }
   handleContextRef = contextRef => this.setState({ contextRef })
   handleToggle = () => this.setState({ active: !this.state.active })
   handleItemClick = (e, { name }) => this.setState({ activeItem: name })
-
-  componentDidMount() {
-
-    getMerchantCategories(this.props.currentMerchant).then((result) => {
-      this.setState({ merchantCategories: result.data });
-      let sections = [];
-      result.data.map((category) => {
-        sections.push("section-" + category.product_category_id);
-      })
-      this.setState({ sections });
-
-    }).catch((error) => {
-
-    })
-    getMerchantProducts(this.props.currentMerchant).then((result) => {
-      this.setState({ merchantProducts: result.data });
-    }).catch((error) => {
-
-    })
-  }
-
 
   render() {
 
@@ -53,7 +29,7 @@ export default class MerchantProductCategories extends Component {
               <Menu secondary style={styleMenu}>
                 <Scrollspy items={this.state.sections} style={{ display: "inherit" }} currentClassName="active" componentTag="section">
                   {
-                    this.state.merchantCategories.map((category) => {
+                    this.props.merchantCategories.map((category) => {
                       let productName = category.product_category_name.en;
                       return (
                         <Menu.Item href={"#section-" + category.product_category_id} active={activeItem === productName} name={category.product_category_name.en} onClick={this.handleItemClick} />
@@ -68,13 +44,13 @@ export default class MerchantProductCategories extends Component {
             <Grid.Column width={10}>
               <div>
                 {
-                  this.state.merchantCategories.map((category) => {
+                  this.props.merchantCategories.map((category) => {
                     return (
                       <section id={category.product_category_id}>
                         <h1 style={styleHeaderProduct}>{category.product_category_name.en}</h1>
                         <Grid>
                           {
-                            this.state.merchantProducts.map((product) => {
+                            this.props.merchantProducts.map((product) => {
                               if (product.product_category === category.product_category_id) {
                                 return (
                                   <Grid.Column width={8}>
