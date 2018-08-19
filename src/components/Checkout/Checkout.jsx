@@ -3,6 +3,7 @@ import { Grid, Image } from 'semantic-ui-react';
 import Card from './Card'
 import LogedIn from './LogedIn'
 import NotLogedIn from './NotLogedIn'
+import Categories from './Categories'
 class Checkout extends Component {
     render() {
         return (
@@ -10,7 +11,7 @@ class Checkout extends Component {
             <p style={{marginBottom:30,marginTop:30,fontSize:50}}>Checkout</p>
             <Grid stackable columns={2}>
                 <Grid.Column width={10}>
-                  <LogedIn/>
+                  <Categories />
                 </Grid.Column>
                 <Grid.Column width={6}>
                   <Card/>
