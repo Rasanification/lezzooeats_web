@@ -4,7 +4,7 @@ import {BrowserRouter as Router, Route, Link, Switch, Redirect} from 'react-rout
 import Merchants from './components/Merchants/Merchants';
 import MerchantMenus from './components/MerchantMenus/MerchantMenus';
 import Navbar from './components/NavigationBar/NavigationBar';
-import MerchantCategories from './components/MerchantCategories/Categories'
+import SelectedCategories from './components/MerchantCategories/SelectedCategories'
 import Checkout from './components/Checkout/Checkout'
 // import Categories from './components/NavigationBar/Categories';
 
@@ -17,7 +17,7 @@ class App extends Component {
           <Navbar/>
           <Route exact path="/Merchants" component={Merchants} />
           <Route path="/MerchantMenus/:id" component={MerchantMenus} />
-          <Route path="/MerchantCategories/:id" component={MerchantCategories} />
+          <Route path="/MerchantCategories/:id/:name" component={SelectedCategories} />
           <Route path="/Checkout" component={Checkout} />
 
         </div>

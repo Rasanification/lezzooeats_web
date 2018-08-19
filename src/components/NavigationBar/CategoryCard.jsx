@@ -9,7 +9,7 @@ class CategoryCard extends Component {
   render() {
     const category=this.props.category;
     return (
-      <Card fluid="fluid" href={"../MerchantCategories/"+category.merchant_specialty_id}>
+      <Card fluid="fluid" href={"../MerchantCategories/"+category.merchant_specialty_id+"/"+category.merchant_specialty_name.en}>
       <FittedImg fit="cover" alt="food" src={category.merchant_specialty_background} height="250"/>
       <Card.Content textAlign="center">
         <Card.Header center>{category.merchant_specialty_name.en}</Card.Header>
