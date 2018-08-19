@@ -30,8 +30,6 @@ class Merchants extends Component {
         <div style={{marginLeft:75,marginRight:75}}>
           <Input type="text" value={this.state.search} onChange={this.updateSearch.bind(this)} size='massive' icon='search' placeholder='Search...' fluid/>
           <br />
-          <ProductModal/>
-          <br />
           <Grid doubling stackable columns={3} style={{margin:0}}>
             {
               filteredMerchants.map((merchant) =>{
