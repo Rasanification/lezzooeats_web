@@ -15,7 +15,7 @@ export default class MerchantMenuCardClass extends Component {
         <Card.Content style={MerchantMenuCardContentDescription} description={merchant ? merchant.merchant_name.en : null} />
         <Card.Content>
           <Label>
-          {merchant ? merchant.merchant_delivery_time : null} min
+            {merchant ? merchant.merchant_delivery_time : null} min
           </Label>
         </Card.Content>
       </Card>

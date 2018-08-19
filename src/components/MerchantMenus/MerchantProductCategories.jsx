@@ -21,14 +21,13 @@ export default class MerchantProductCategories extends Component {
     const { active, contextRef } = this.state
     const { activeItem } = this.state
 
-
     return (
       <div ref={this.handleContextRef}>
-        <Segment style={zeropad}>
+        <Segment style={{padding:0,margin:0}}>
           <Sticky context={contextRef} >
-            <Segment style={zeropad}>
-              <Menu secondary style={styleMenu}>
-                <Scrollspy items={this.state.sections} style={{ display: "inherit" }} currentClassName="active" componentTag="section">
+            <Segment style={{padding:0,margin:0}}>
+              <Menu secondary style={{background: 'white',padding: 4,paddingLeft: 30,paddingRight: 30,margin: 0,}}>
+                <Scrollspy items={this.props.sections} style={{ display: "inherit" }} currentClassName="active" componentTag="section">
                   {
                     this.props.merchantCategories.map((category) => {
                       let productName = category.product_category_name.en;
@@ -48,8 +47,8 @@ export default class MerchantProductCategories extends Component {
                 {
                   this.props.merchantCategories.map((category) => {
                     return (
-                      <section id={category.product_category_id}>
-                        <h1 style={styleHeaderProduct}>{category.product_category_name.en}</h1>
+                      <section id={"section-" + category.product_category_id}>
+                        <h1 style={styleHeaderProduct}>{category.product_category_name.en} hhhhhhhh {this.props.sections}</h1>
                         <Grid>
                           {
                             this.props.merchantProducts.map((product) => {
@@ -72,36 +71,26 @@ export default class MerchantProductCategories extends Component {
             </Grid.Column>
             <Grid.Column width={6}>
               <Sticky style={stickyCheckoutCard} context={contextRef} offset={100} >
-                <Segment style={zeropad}>
+                <Segment style={{padding:0,margin:0}}>
                   <CheckoutCard />
                 </Segment>
               </Sticky>
             </Grid.Column>
           </Grid>
         </Segment>
-
       </div>
     )
   }
 }
 
 ////////////// css /////////////////
-const styleMenu = {
-  background: 'white',
-  padding: 4,
-  paddingLeft: 30,
-  paddingRight: 30,
-  margin: 0,
-};
-const zeropad = {
-  margin: 0,
-  padding: 0,
-};
+
 const stickyCheckoutCard = {
   marginTop: 165,
   marginRight: 90,
 };
 const styleDivProduct = {
+
   margin: 90,
 };
 const styleHeaderProduct = {

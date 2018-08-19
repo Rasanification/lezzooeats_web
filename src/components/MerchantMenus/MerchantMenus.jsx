@@ -10,7 +10,6 @@ class MerchantMenus extends Component{
     this.state = { currentMerchant:[], merchantCategories: [], merchantProducts: [], sections: [], merchantBackground:"" };
   }
   componentDidMount() {
-
     getMerchantCategories(this.props.match.params.id).then((result) => {
       this.setState({ merchantCategories: result.data });
       let sections = [];
@@ -20,22 +19,19 @@ class MerchantMenus extends Component{
       this.setState({ sections });
 
     }).catch((error) => {
-
     })
     getMerchantProducts(this.props.match.params.id).then((result) => {
       this.setState({ merchantProducts: result.data });
     }).catch((error) => {
-
     })
     getSingleMerchant(this.props.match.params.id).then((result) => {
       this.setState({ merchantBackground: result.data[0].merchant_image });
       this.setState({ currentMerchant: result.data});
     }).catch((error) => {
-
     })
   }
   render(){
-    var background_Image = {
+    const background_Image = {
       padding: 0,
       margin: 0,
       backgroundSize: 'cover',
@@ -46,10 +42,10 @@ class MerchantMenus extends Component{
     };
 
     return(
-    <Container fluid style={zeropad}>
-        <div style={background_Image}>
-          <Grid doubling stackable columns={3}>
-            <Grid.Column style={MerchantMenuCardColumn}>
+    <Container fluid style={{padding:0,margin:0}}>
+      <div style={background_Image}>
+        <Grid doubling stackable columns={3}>
+          <Grid.Column style={{margin:'50px'}}>
             {
               this.state.currentMerchant.map((merchant) =>{
                 return(
@@ -57,9 +53,9 @@ class MerchantMenus extends Component{
                 )
               })
             }
-            </Grid.Column>
-          </Grid>
-        </div>
+          </Grid.Column>
+        </Grid>
+      </div>
       <MerchantProductCategories merchantCategories={this.state.merchantCategories} merchantProducts={this.state.merchantProducts} sections={this.state.sections}/>
     </Container>
   )
@@ -67,13 +63,5 @@ class MerchantMenus extends Component{
 
 }
 
-const zeropad={
-  padding: 0,
-  margin: 0,
-};
-
-const MerchantMenuCardColumn={
-  margin:'50px',
-};
 
 export default MerchantMenus
