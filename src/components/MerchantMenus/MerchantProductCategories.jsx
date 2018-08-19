@@ -4,6 +4,7 @@ import './MerchantMenus.css';
 import Scrollspy from 'react-scrollspy';
 import ProductCard from './ProductCard';
 import CheckoutCard from './CheckoutCard';
+import ProductModal from './ProductModal';
 
 export default class MerchantProductCategories extends Component {
   constructor(props) {
@@ -42,6 +43,7 @@ export default class MerchantProductCategories extends Component {
           </Sticky>
           <Grid stackable fluid centered columns={2}>
             <Grid.Column width={10}>
+            <ProductModal />
               <div>
                 {
                   this.props.merchantCategories.map((category) => {
