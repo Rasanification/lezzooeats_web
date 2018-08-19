@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
-import { Button, Header, Image, Modal, Icon, Grid,Menu } from 'semantic-ui-react'
-import CategoryListImage from './CategoryListImage';
+import { Button, Modal, Icon, Grid} from 'semantic-ui-react'
 import CategoryCard from './CategoryCard';
-import {getAllSpecialities} from '../fetch/Specialities';
+import { getAllSpecialities } from '../fetch/Specialities';
 
 class CategoriesModal extends Component {
     constructor(props){
@@ -27,15 +26,14 @@ class CategoriesModal extends Component {
     return (
       <div>
         <Button onClick={this.show(true)}><Icon name='th' />Categories</Button>
-        <Modal dimmer={dimmer} open={open} onClose={this.close}>
+        <Modal dimmer={dimmer} open={open} onClose={this.close} size="large">
           <Modal.Header>Select a Category</Modal.Header>
           <Modal.Content>
-          <Grid doubling stackable columns={4}>
+          <Grid doubling stackable columns={3}>
               {this.state.categories.map((category) =>{
                     return(
                       <Grid.Column>
                         <CategoryCard category={category} />
-                        <p>{category.merchant_specialty_id}</p>
                       </Grid.Column>
                     )
                   })

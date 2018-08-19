@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { Container,Button, Input, Menu, Accordion, Icon, Grid } from 'semantic-ui-react';
-import { Link } from 'react-router-dom';
+import {Menu} from 'semantic-ui-react';
 import CategoriesModal from './CategoriesModal';
 
 class NavigationBar extends Component {
