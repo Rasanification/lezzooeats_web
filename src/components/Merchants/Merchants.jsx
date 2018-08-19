@@ -23,7 +23,7 @@ class Merchants extends Component {
     render() {
         let filteredMerchants = this.state.merchants.filter(
           (merchant) => {
-            return merchant.merchant_name.en.toLowerCase().indexOf(this.state.search) !== -1
+            return merchant.merchant_name.en.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1
           }
         );
         return (
