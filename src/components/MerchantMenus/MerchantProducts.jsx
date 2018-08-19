@@ -22,7 +22,7 @@ export default class MerchantProducts extends Component {
 
     return (
       <div ref={this.handleContextRef}>
-        <Segment fluid>
+        <Segment style={{padding:0,margin:0}}>
           <Sticky context={contextRef} >
             <Segment style={{padding:0,margin:0}}>
               <Menu secondary style={{background: 'white',padding: 4,paddingLeft: 30,paddingRight: 30,margin: 0,}}>
