@@ -42,14 +42,13 @@ export default class MerchantProductCategories extends Component {
           </Sticky>
           <Grid stackable fluid centered columns={2}>
             <Grid.Column width={10}>
-            <ProductModal />
-              <div>
+              <div style={{margin: 80,}}>
                 {
                   this.props.merchantCategories.map((category) => {
                     return (
                       <section id={"section-" + category.product_category_id}>
-                        <h1 style={styleHeaderProduct}>{category.product_category_name.en} hhhhhhhh {this.props.sections}</h1>
-                        <Grid>
+                        <h1 style={{marginTop: 40,marginBottom: 40,}}>{category.product_category_name.en}</h1>
+                        <Grid stackable fluid>
                           {
                             this.props.merchantProducts.map((product) => {
                               if (product.product_category === category.product_category_id) {
@@ -70,7 +69,7 @@ export default class MerchantProductCategories extends Component {
               </div>
             </Grid.Column>
             <Grid.Column width={6}>
-              <Sticky style={stickyCheckoutCard} context={contextRef} offset={100} >
+              <Sticky style={{marginTop: 165,marginRight: 90,}} context={contextRef} offset={100} >
                 <Segment style={{padding:0,margin:0}}>
                   <CheckoutCard />
                 </Segment>
@@ -82,18 +81,3 @@ export default class MerchantProductCategories extends Component {
     )
   }
 }
-
-////////////// css /////////////////
-
-const stickyCheckoutCard = {
-  marginTop: 165,
-  marginRight: 90,
-};
-const styleDivProduct = {
-
-  margin: 90,
-};
-const styleHeaderProduct = {
-  marginTop: 40,
-  marginBottom: 40,
-};
