@@ -22,7 +22,7 @@ export default class MerchantProducts extends Component {
 
     return (
       <div ref={this.handleContextRef}>
-        <Segment style={{padding:0,margin:0}}>
+        <Segment style={{padding:0,margin:0, }}>
           <Sticky context={contextRef} >
             <Segment style={{padding:0,margin:0}}>
               <Menu secondary style={{background: 'white',padding: 4,paddingLeft: 30,paddingRight: 30,margin: 0,}}>
@@ -39,9 +39,9 @@ export default class MerchantProducts extends Component {
               </Menu>
             </Segment>
           </Sticky>
-          <Grid stackable fluid centered columns={2}>
+          <Grid stackable fluid columns={2}>
             <Grid.Column width={10}>
-              <div style={{margin: 80,}}>
+              <div style={{padding: 50,}}>
                 {
                   this.props.merchantCategories.map((category) => {
                     return (
@@ -67,11 +67,10 @@ export default class MerchantProducts extends Component {
                 }
               </div>
             </Grid.Column>
-            <Grid.Column width={6}>
-              <Sticky style={{marginTop: 165,marginRight: 90,}} context={contextRef} offset={100} >
-                <Segment style={{padding:0,margin:0}}>
+            <Grid.Column width={5}>
+              <Sticky style={{marginTop: 165,}} context={contextRef} offset={100} >
+
                   <CheckoutCard />
-                </Segment>
               </Sticky>
             </Grid.Column>
           </Grid>

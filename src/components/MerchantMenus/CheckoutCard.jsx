@@ -28,7 +28,7 @@ export default class CheckoutCard extends Component {
       fontSize:18,
     };
     const sizeCardCheckOutCard={
-      minWidth:393,
+      // minWidth:393,
     };
     return (
       <Card fluid style={sizeCardCheckOutCard}>

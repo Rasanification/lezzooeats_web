@@ -1,10 +1,8 @@
 import React, {Component} from 'react'
 import {Card, Icon, Image, Grid, Label} from 'semantic-ui-react'
 import FittedImg from 'react-fitted-img';
-const merchantCardStyle={
-  color: 'black',
-  boxShadow: "0px 3px 10px #efefef",
-};
+
+
 class MerchantCard extends Component {
   constructor(props) {
     super(props)
@@ -12,7 +10,7 @@ class MerchantCard extends Component {
   render() {
     const merchant=this.props.merchant
     return (
-    <Card fluid="fluid" href={"../MerchantMenus/"+merchant.merchant_id} style={merchantCardStyle}>
+    <Card fluid="fluid" href={"../MerchantMenus/"+merchant.merchant_id} style={{color: 'black',boxShadow: "0px 3px 10px #efefef",}}>
       <FittedImg fit="cover" alt="food" src={merchant.merchant_image} height="250"/>
       <Card.Content>
         <Grid>
@@ -28,7 +26,7 @@ class MerchantCard extends Component {
               </Card.Header>
             </Grid.Column>
           </Grid.Row>
-        <Grid.Row>
+          <Grid.Row>
             <Grid.Column>
               <Card.Description >
                 <Label style={{background:'#f5f5f5',fontSize:13}}> {merchant.merchant_open_time} - {merchant.merchant_close_time} </Label>

@@ -13,24 +13,24 @@ export default class ProductCard extends Component {
     const product =this.props.product;
 
     return (
-      <Card fluid>
-        <Grid stackable fluid style={{background:'white',padding:4,margin:0,}}>
-          <Grid.Column  width={10}>
-            <Card.Content>
-              <Card.Header style={{fontSize:22,}}> {product ? product.product_name.en : null}</Card.Header>
+
+      <Card fluid="fluid" style={{boxShadow: '0px 3px 10px #cecece',}}>
+        <Card.Content>
+          <Grid columns={2}>
+            <Grid.Column width={10}>
+              <Card.Header style={{fontSize:18,}}> {product ? product.product_name.en : null}</Card.Header>
               <Card.Meta >
                 <p style={{overflow: 'hidden',whiteSpace: 'nowrap',textOverflow: 'ellipsis',marginTop:8,marginBottom:20,}}>
                 {product? product.product_description.en : null}
                 </p>
               </Card.Meta>
               <Card.Description>{product ? product.product_price : null} IQD</Card.Description>
-            </Card.Content>
+            </Grid.Column>
+            <Grid.Column style={{backgroundSize:'cover',backgroundImage:`url(${product ? product.product_image : null})`}} width={6}>
 
-          </Grid.Column>
-          <Grid.Column width={6} style={{padding:0,margin:0,}}>
-            <FittedImg fit="cover" alt="food" src={product ? product.product_image : null} height="150" style={{padding:0,margin:0,}}/>
-          </Grid.Column>
-        </Grid>
+            </Grid.Column>
+          </Grid>
+        </Card.Content>
         <ProductModal product={product}/>
       </Card>
     )

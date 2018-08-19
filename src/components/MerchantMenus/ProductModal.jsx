@@ -31,7 +31,7 @@ class ProductModal extends Component {
       <Modal
         dimmer={dimmer} open={open} onClose={this.close}
         size='small'
-        trigger={<Button onClick={this.show(true)} >Order</Button>}
+        trigger={<Button positive onClick={this.show(true)} >Order</Button>}
         style={{ margin: 0, padding: 0 }}
       >
         <Modal.Content scrolling style={{ maxHeight: 500, height: 500, margin: 0, padding: 0 }}>
