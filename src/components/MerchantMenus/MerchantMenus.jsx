@@ -28,7 +28,6 @@ class MerchantMenus extends Component{
 
     })
     getSingleMerchant(this.props.match.params.id).then((result) => {
-      console.log(result.data[0]);
       this.setState({ merchantBackground: result.data[0].merchant_image });
       this.setState({ currentMerchant: result.data});
     }).catch((error) => {

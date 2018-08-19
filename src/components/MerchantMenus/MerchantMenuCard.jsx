@@ -16,7 +16,6 @@ export default class MerchantMenuCardClass extends Component {
         <Card.Content>
           <Label>
           {merchant ? merchant.merchant_delivery_time : null} min
-          
           </Label>
         </Card.Content>
       </Card>

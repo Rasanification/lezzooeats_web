@@ -1,7 +1,8 @@
 import React, {Component} from 'react'
 import { Grid, Card, Image } from 'semantic-ui-react'
+import ProductModal from './ProductModal';
 
-export default class CardExampleImageCard extends Component {
+export default class ProductCard extends Component {
   constructor(props) {
     super(props);
   }
@@ -29,8 +30,8 @@ export default class CardExampleImageCard extends Component {
             <Image style={zeropad} src={product ? product.product_image : null} />
           </Grid.Column>
         </Grid>
+        <ProductModal product={product}/>
       </Card>
-
     )
   }
 }
