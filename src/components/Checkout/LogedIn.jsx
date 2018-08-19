@@ -42,15 +42,28 @@ export default class CheckoutCard extends Component {
                 }}>
 
                 </div>
-                <Grid columns={2} style={{marginTop:10}}>
-                  <Grid.Column width={8}>
-                    <label>lat</label>
-                    <Input fluid value="Norway" readOnly style={{background:'#f1f1f1'}}/>
-                  </Grid.Column>
-                  <Grid.Column width={8}>
-                    <label>lng</label>
-                    <Input fluid value="Norway" readOnly style={{background:'#f1f1f1'}}/>
-                  </Grid.Column>
+                <Grid stackable fluid columns={2} style={{marginTop:10}}>
+                    <Grid.Column width={8}>
+                      <Grid stackable fluid style={{margin:0,padding:0}}>
+                        <Grid.Row style={{margin:0,padding:0}}>
+                          <Label style={{background:'transparent',fontSize:15}}>lat</Label>
+                        </Grid.Row>
+                        <Grid.Row style={{margin:0,padding:0}}>
+                          <Label style={{background:'#f1f1f1',fontSize:15,width:'100%'}}>22.343432323</Label>
+                        </Grid.Row>
+                      </Grid>
+                    </Grid.Column>
+                    <Grid.Column width={8}>
+                      <Grid stackable fluid style={{marginTop:0,padding:0}}>
+                        <Grid.Row style={{margin:0,padding:0}}>
+                          <Label style={{background:'transparent',fontSize:15}}>lng</Label>
+                        </Grid.Row>
+                        <Grid.Row style={{margin:0,padding:0}}>
+                          <Label style={{background:'#f1f1f1',fontSize:15,width:'100%'}}>22.343432323</Label>
+                        </Grid.Row>
+                      </Grid>
+                    </Grid.Column>
+
                 </Grid>
 
               </Card.Description>
