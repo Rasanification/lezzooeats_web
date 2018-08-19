@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import { Container,Grid, Input } from 'semantic-ui-react';
+import {Container,Grid, Input, Segment } from 'semantic-ui-react';
 import MerchantCard from './MerchantCard';
-import ProductModal from './ProductModal';
 import { getAllMerchants } from '../fetch/Merchants';
 class Merchants extends Component {
     constructor(props){
@@ -27,21 +26,24 @@ class Merchants extends Component {
           }
         );
         return (
-        <div style={{marginLeft:75,marginRight:75}}>
-          <Input type="text" value={this.state.search} onChange={this.updateSearch.bind(this)} size='massive' icon='search' placeholder='Search...' fluid/>
-          <br />
-          <Grid doubling stackable columns={3} style={{margin:0}}>
-            {
-              filteredMerchants.map((merchant) =>{
-                return(
-                  <Grid.Column>
-                    <MerchantCard merchant={merchant} key={merchant.merchant_id}/>
-                  </Grid.Column>
-                )
-              })
-            }
-          </Grid>
-        </div>
+        <Container fluid>
+          <Segment basic>          
+            <Input type="text" value={this.state.search} onChange={this.updateSearch.bind(this)} size='massive' icon='search' placeholder='Search...' fluid/>
+          </Segment>
+          <Segment basic>
+            <Grid doubling stackable columns={3} style={{margin:0}}>
+              {
+                filteredMerchants.map((merchant) =>{
+                  return(
+                    <Grid.Column>
+                      <MerchantCard merchant={merchant} key={merchant.merchant_id}/>
+                    </Grid.Column>
+                  )
+                })
+              }
+            </Grid>
+          </Segment>
+        </Container>
         );
     }
 }
