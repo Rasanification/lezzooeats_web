@@ -13,22 +13,22 @@ class MerchantCard extends Component {
     const merchant=this.props.merchant
     return (
     <Card fluid="fluid" href={"../MerchantMenus/"+merchant.merchant_id} style={merchantCardStyle}>
-      <FittedImg fit="cover" alt="food" src={merchant.merchant_image} height="220"/>
+      <FittedImg fit="cover" alt="food" src={merchant.merchant_image} height="250"/>
       <Card.Content>
         <Grid>
-          <Grid.Row style={{margin:0,padding:10,paddingBottom:0}}>
+          <Grid.Row>
             <Grid.Column width={4}>
               <FittedImg fit="cover" alt="food" src={merchant.merchant_logo} height="50" style={{borderRadius:100,}}/>
             </Grid.Column>
             <Grid.Column width={12}>
-              <Card.Header style={{margin:0,padding:0}}>
+              <Card.Header>
                 <p style={{fontSize:18,margin:0,padding:0}}>{merchant.merchant_name.en}</p>
                 <p style={{fontSize:14,margin:0,padding:0}}>{merchant.merchant_specialty_name.en}</p>
               {/*<p style={{fontSize:10,margin:0}}>( {merchant.merchant_open_time} - {merchant.merchant_close_time} )</p>*/}
               </Card.Header>
             </Grid.Column>
           </Grid.Row>
-        <Grid.Row style={{margin:0,padding:10}}>
+        <Grid.Row>
             <Grid.Column>
               <Card.Description >
                 <Label style={{background:'#f5f5f5',fontSize:13}}> {merchant.merchant_open_time} - {merchant.merchant_close_time} </Label>
