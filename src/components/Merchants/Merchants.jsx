@@ -6,7 +6,10 @@ import { getAllMerchants } from '../fetch/Merchants';
 class Merchants extends Component {
     constructor(props){
       super(props);
-      this.state = {merchants:[]};
+      this.state = {
+        merchants:[],
+        search : ''
+      };
     }
     componentDidMount() {
       getAllMerchants().then((result)=> {
@@ -14,19 +17,27 @@ class Merchants extends Component {
       }).catch((error)=>{
       })
     }
+    updateSearch(event){
+      this.setState({search:event.target.value.substr(0,20)})
+    }
     render() {
+        let filteredMerchants = this.state.merchants.filter(
+          (merchant) => {
+            return merchant.merchant_name.en.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1
+          }
+        );
         return (
         <div style={{marginLeft:75,marginRight:75}}>
-          <Input size='massive' icon='search' placeholder='Search...' fluid/>
+          <Input type="text" value={this.state.search} onChange={this.updateSearch.bind(this)} size='massive' icon='search' placeholder='Search...' fluid/>
           <br />
           <ProductModal/>
           <br />
           <Grid doubling stackable columns={3} style={{margin:0}}>
             {
-              this.state.merchants.map((merchant) =>{
+              filteredMerchants.map((merchant) =>{
                 return(
                   <Grid.Column>
-                    <MerchantCard merchant={merchant}/>
+                    <MerchantCard merchant={merchant} key={merchant.merchant_id}/>
                   </Grid.Column>
                 )
               })
