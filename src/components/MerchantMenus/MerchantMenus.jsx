@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import { Container, Grid } from 'semantic-ui-react'
-import MerchantMenuCard from './MerchantMenuCard';
-import MerchantProductCategories from './MerchantProductCategories';
+import MerchantHeaderCard from './MerchantHeaderCard';
+import MerchantProducts from './MerchantProducts';
 import { getMerchantCategories, getMerchantProducts,getSingleMerchant } from '../fetch/Merchants';
 
 class MerchantMenus extends Component{
@@ -49,14 +49,14 @@ class MerchantMenus extends Component{
             {
               this.state.currentMerchant.map((merchant) =>{
                 return(
-                  <MerchantMenuCard  merchant={merchant}/>
+                  <MerchantHeaderCard  merchant={merchant}/>
                 )
               })
             }
           </Grid.Column>
         </Grid>
       </div>
-      <MerchantProductCategories merchantCategories={this.state.merchantCategories} merchantProducts={this.state.merchantProducts} sections={this.state.sections}/>
+      <MerchantProducts merchantCategories={this.state.merchantCategories} merchantProducts={this.state.merchantProducts} sections={this.state.sections}/>
     </Container>
   )
 }

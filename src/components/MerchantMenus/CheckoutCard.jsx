@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import { Card, Icon, Button, Dropdown, Grid } from 'semantic-ui-react'
+import { Card, Button, Dropdown, Grid } from 'semantic-ui-react'
 
 export default class CheckoutCard extends Component {
   render() {

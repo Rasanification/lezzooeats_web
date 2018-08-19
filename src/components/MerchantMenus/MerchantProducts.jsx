@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
-import { Grid, Menu, Dropdown, Sticky, Segment, List, Item } from 'semantic-ui-react';
+import { Grid, Menu,Sticky, Segment} from 'semantic-ui-react';
 import './MerchantMenus.css';
 import Scrollspy from 'react-scrollspy';
 import ProductCard from './ProductCard';
 import CheckoutCard from './CheckoutCard';
-import ProductModal from './ProductModal';
 
-export default class MerchantProductCategories extends Component {
+export default class MerchantProducts extends Component {
   constructor(props) {
     super(props);
   }
@@ -23,7 +22,7 @@ export default class MerchantProductCategories extends Component {
 
     return (
       <div ref={this.handleContextRef}>
-        <Segment style={{padding:0,margin:0}}>
+        <Segment fluid>
           <Sticky context={contextRef} >
             <Segment style={{padding:0,margin:0}}>
               <Menu secondary style={{background: 'white',padding: 4,paddingLeft: 30,paddingRight: 30,margin: 0,}}>

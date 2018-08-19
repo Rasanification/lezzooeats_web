@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import { Card, Label } from 'semantic-ui-react'
 
-export default class MerchantMenuCardClass extends Component {
+export default class MerchantHeaderCard extends Component {
 
   constructor(props) {
     super(props);
