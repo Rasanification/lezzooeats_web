@@ -10,7 +10,7 @@ class MerchantCard extends Component {
   render() {
     const merchant=this.props.merchant
     return (
-    <Card fluid="fluid" href={"../MerchantMenus/"+merchant.merchant_id} style={{color: 'black',boxShadow: "0px 3px 10px #efefef",}}>
+    <Card fluid="fluid" href={"/MerchantMenus/"+merchant.merchant_id} style={{color: 'black',boxShadow: "0px 3px 10px #efefef",}}>
       <FittedImg fit="cover" alt="food" src={merchant.merchant_image} height="250"/>
       <Card.Content>
         <Grid>
