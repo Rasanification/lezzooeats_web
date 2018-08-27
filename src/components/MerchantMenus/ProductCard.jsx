@@ -1,12 +1,12 @@
 import React, {Component} from 'react'
 import { Grid, Card, } from 'semantic-ui-react'
 import ProductModal from './ProductModal';
+import { connect } from 'react-redux'
 
-export default class ProductCard extends Component {
+class ProductCard extends Component {
   constructor(props) {
     super(props);
   }
-
 
   render() {
     const product =this.props.product;
@@ -35,3 +35,23 @@ export default class ProductCard extends Component {
     )
   }
 }
+
+
+function mapStateToProps(state) {
+  return {
+    cart: state.cart,
+  }
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+    addToCart: (item) => {
+      dispatch({ type: 'ADD', payload: item })
+    },
+    removeFromCart: (item) => {
+      dispatch({ type: 'REMOVE', payload: item })
+    }
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(ProductCard)
