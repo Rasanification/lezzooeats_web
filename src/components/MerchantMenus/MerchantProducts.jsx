@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Grid, Menu,Sticky, Segment} from 'semantic-ui-react';
-import './MerchantMenus.css';
+import '../../resources/MerchantMenus.css';
 import Scrollspy from 'react-scrollspy';
 import ProductCard from './ProductCard';
 import CheckoutCard from './CheckoutCard';

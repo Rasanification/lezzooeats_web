@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Button, Modal, Icon, Grid} from 'semantic-ui-react'
 import CategoryCard from './CategoryCard';
-import { getAllSpecialities } from '../fetch/Specialities';
+import { getAllSpecialities } from '../../actions/Specialities';
 
 class CategoriesModal extends Component {
     constructor(props){

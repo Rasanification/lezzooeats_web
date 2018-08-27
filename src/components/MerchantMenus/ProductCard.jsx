@@ -1,7 +1,6 @@
 import React, {Component} from 'react'
-import { Grid, Card, Image } from 'semantic-ui-react'
+import { Grid, Card, } from 'semantic-ui-react'
 import ProductModal from './ProductModal';
-import FittedImg from 'react-fitted-img';
 
 export default class ProductCard extends Component {
   constructor(props) {

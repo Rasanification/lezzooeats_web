@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Container, Grid, Segment } from 'semantic-ui-react';
 import MerchantCard from '../Merchants/MerchantCard';
-import { getMerchantsBySpecialty } from '../fetch/Merchants';
+import { getMerchantsBySpecialty } from '../../actions/Merchants';
 
 class SelectedCategories extends Component {
     constructor(props){
@@ -15,7 +15,7 @@ class SelectedCategories extends Component {
       }).catch((error)=>{
       });
     }
-    
+
     render() {
         return (
         <Container fluid>

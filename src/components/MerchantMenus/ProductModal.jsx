@@ -1,6 +1,6 @@
-import _ from 'lodash'
 import React, { Component } from 'react';
-import { Button, Header, Icon, Image, Modal, Form, Radio, Checkbox, Input, Grid, Label } from 'semantic-ui-react'
+import { Button, Header, Icon, Modal, Form, Radio, Grid, Label } from 'semantic-ui-react'
+import { connect } from 'react-redux'
 
 class ProductModal extends Component {
   constructor(props) {
@@ -107,7 +107,7 @@ class ProductModal extends Component {
               </div>
             </Grid.Column>
             <Grid.Column width={9}>
-              <Button fluid negative style={{ paddingBottom: 0 }} size='large'>
+              <Button onClick={() => this.props.addToCart(product)} fluid negative style={{ paddingBottom: 0 }} size='large'>
                 <p style={{ float: 'left', paddingLeft: 100 }}>Add {this.state.amount} to Card</p>
                 <p style={{ float: 'right' }}>+GBP1.00</p>
               </Button>
@@ -119,4 +119,22 @@ class ProductModal extends Component {
   }
 }
 
-export default ProductModal
+
+function mapStateToProps(state) {
+  return {
+    cart: state.cart,
+  }
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+    addToCart: (item) => {
+      dispatch({ type: 'ADD', payload: item })
+    },
+    removeFromCart: (item) => {
+      dispatch({ type: 'REMOVE', payload: item })
+    }
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(ProductModal)

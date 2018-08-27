@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {Container,Grid, Input, Segment } from 'semantic-ui-react';
 import MerchantCard from './MerchantCard';
-import { getAllMerchants } from '../fetch/Merchants';
+import { getAllMerchants } from '../../actions/Merchants';
 class Merchants extends Component {
     constructor(props){
       super(props);
@@ -27,7 +27,7 @@ class Merchants extends Component {
         );
         return (
         <Container fluid>
-          <Segment basic>          
+          <Segment basic>
             <Input type="text" value={this.state.search} onChange={this.updateSearch.bind(this)} size='massive' icon='search' placeholder='Search...' fluid/>
           </Segment>
           <Segment basic>

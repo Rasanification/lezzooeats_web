@@ -48,7 +48,7 @@ export default class CheckoutCard extends Component {
                   <h4>Chicken Mix</h4>
                   <p>Tango Orange</p>
                   <p>Upgrade fries</p>
-                  <a href="#" > Remove </a>
+                  <a > Remove </a>
                 </div>
               </Grid.Column>
               <Grid.Column style={{textAlign: 'right'}} width={6}>

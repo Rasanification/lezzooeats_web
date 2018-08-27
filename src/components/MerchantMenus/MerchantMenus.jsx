@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import { Container, Grid } from 'semantic-ui-react'
 import MerchantHeaderCard from './MerchantHeaderCard';
 import MerchantProducts from './MerchantProducts';
-import { getMerchantCategories, getMerchantProducts,getSingleMerchant } from '../fetch/Merchants';
+import { getMerchantCategories, getMerchantProducts,getSingleMerchant } from '../../actions/Merchants';
 
 class MerchantMenus extends Component{
   constructor(props){
