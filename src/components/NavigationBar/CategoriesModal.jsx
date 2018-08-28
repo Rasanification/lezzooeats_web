@@ -30,7 +30,8 @@ class CategoriesModal extends Component {
           <Modal.Header>Select a Category</Modal.Header>
           <Modal.Content>
           <Grid doubling stackable columns={3}>
-              {this.state.categories.map((category) =>{
+              {
+                this.state.categories.map((category) =>{
                     return(
                       <Grid.Column>
                         <CategoryCard category={category} />

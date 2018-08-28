@@ -14,7 +14,7 @@ class CategoryCard extends Component {
       <Card.Content textAlign="center">
         <Card.Header center>{category.merchant_specialty_name.en}</Card.Header>
       </Card.Content>
-    </Card>
+      </Card>
   )
   }
 }
