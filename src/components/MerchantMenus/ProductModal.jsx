@@ -56,19 +56,23 @@ class ProductModal extends Component {
                       <div style={{fontSize:20,paddingBottom:15}}>{addon.name.en}</div>
                         <Form.Field style={{paddingBottom:15}}>
                           <div>
-                            <Radio
-                              style={{ fontSize: 18 }}
-                              label={addon.values[0].name.en}
-                              name={addon.name.en}
-                              value={addon.values[0].price}
-                            />
-                            <p style={{ float: 'right', fontSize: 18 }}>{addon.values[0].price} IQD</p>
-                          </div>
                           {
-                            addon.values.map((addons) =>{
-
+                            addon.values.map((addon) =>{
+                              return(
+                                <div>
+                                <Radio
+                                  style={{ fontSize: 18 }}
+                                  label={addon.name.en}
+                                  name={addon.name.en}
+                                  value={addon.price}
+                                />
+                                <p style={{ float: 'right', fontSize: 18 }}>{addon.price} IQD</p>
+                                </div>
+                              )
                             })
                           }
+                          </div>
+
                           </Form.Field>
                         {/* <Form.Field style={{paddingBottom:15}}>
                           <div>
@@ -90,6 +94,7 @@ class ProductModal extends Component {
                 null
               }
             </Form>
+            {console.log(this.props.product.product_addons.values[0])}
           </Modal.Description>
         </Modal.Content>
 

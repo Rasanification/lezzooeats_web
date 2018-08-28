@@ -10,11 +10,11 @@ class CategoryCard extends Component {
     const category=this.props.category;
     return (
       <Card fluid="fluid" href={"../MerchantCategories/"+category.merchant_specialty_id+"/"+category.merchant_specialty_name.en}>
-      <FittedImg fit="cover" alt="food" src={category.merchant_specialty_background} height="250"/>
+      <FittedImg fit="cover" alt="food" src={category.merchant_specialty_background} onError={(e)=>{e.target.src="http://news.lezzooeats.com/wp-content/uploads/2018/07/lezzoo512512.png"}} height="250"/>
       <Card.Content textAlign="center">
         <Card.Header center>{category.merchant_specialty_name.en}</Card.Header>
       </Card.Content>
-    </Card>
+      </Card>
   )
   }
 }
