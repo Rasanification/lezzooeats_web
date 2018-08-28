@@ -27,6 +27,14 @@ class ProductModal extends Component {
     const { open, dimmer } = this.state
     const product = this.props.product;
 
+    let cart ={
+                product_id:product.product_id,
+                product_name:product.product_name,
+                product_price:product.product_price,
+                amount:this.state.amount,
+                product_addons:{}
+              };
+
     return (
       <Modal
         dimmer={dimmer} open={open} onClose={this.close}
@@ -43,53 +51,46 @@ class ProductModal extends Component {
           <Modal.Description style={{ margin: 50 }}>
             <Header style={{ fontSize: 38 }}>{product ? product.product_name.en : null}</Header>
             <p style={{ fontSize: 16, color: 'gray', padding: 4 }}>{product ? product.product_description.en : null}</p>
-
             <Form style={{ margin: 5, marginTop: 40 }}>
-              {
-                this.props.product?
-                this.props.product.product_addons?
-                this.props.product.product_addons.length > 0?
-                this.props.product.product_addons.map((addon) =>{
+               {
+                 this.props.product?
+                 this.props.product.product_addons?
+                 this.props.product.product_addons.length > 0?
+                 this.props.product.product_addons.map((addon) =>{
 
-                  return(
-                    <Form.Group grouped>
-                      <div style={{fontSize:20,paddingBottom:15}}>{addon.name.en}</div>
-                        <Form.Field style={{paddingBottom:15}}>
-                          <div>
-                            <Radio
-                              style={{ fontSize: 18 }}
-                              label={addon.values[0].name.en}
-                              name={addon.name.en}
-                              value={addon.values[0].price}
-                            />
-                            <p style={{ float: 'right', fontSize: 18 }}>{addon.values[0].price} IQD</p>
-                          </div>
-                          {
-                            addon.values.map((addons) =>{
+                   return(
+                     <Form.Group grouped>
+                       <div style={{fontSize:20,paddingBottom:15}}>{addon.name.en}</div>
+                          <Form.Field style={{paddingBottom:15}}>
+                            <div>
+                              {
+                               addon.values.map((addon) =>{
+                                 return(
+                                   <div>
+                                   <Radio
+                                     style={{ fontSize: 18 }}
+                                     label={addon.name.en}
+                                     name={addon.name.en}
+                                     value={addon.price}
+                                   />
+                                   <p style={{float:'right',fontSize:'18'}}>{addon.price} IQD</p>
+                                   </div>
+                                 )
+                               })
+                              }
+                            </div>
 
-                            })
-                          }
                           </Form.Field>
-                        {/* <Form.Field style={{paddingBottom:15}}>
-                          <div>
-                            <Radio
-                              style={{fontSize:18}}
-                              label='Brown Rice'
-                              name='radioGroup'
-                              value='v2'
-                            />
-                            <p style={{float:'right',fontSize:'18'}}>+GBP1.00</p>
-                          </div>
-                        </Form.Field> */}
-                    </Form.Group>
-                  )
-                })
-                :
-                null:
-                null:
-                null
-              }
-            </Form>
+
+                     </Form.Group>
+                   )
+                 })
+                 :
+                 null:
+                 null:
+                 null
+               }
+             </Form>
           </Modal.Description>
         </Modal.Content>
 
@@ -107,7 +108,11 @@ class ProductModal extends Component {
               </div>
             </Grid.Column>
             <Grid.Column width={9}>
-              <Button onClick={() => this.props.addToCart(product)} fluid negative style={{ paddingBottom: 0 }} size='large'>
+              <Button onClick={() => {  this.props.addToCart(cart);  this.close(); } }
+                      fluid negative
+                      style={{ paddingBottom: 0 }}
+                      size='large'
+              >
                 <p style={{ float: 'left', paddingLeft: 100 }}>Add {this.state.amount} to Card</p>
                 <p style={{ float: 'right' }}>+GBP1.00</p>
               </Button>
@@ -130,9 +135,9 @@ function mapDispatchToProps(dispatch) {
   return {
     addToCart: (item) => {
       dispatch({ type: 'ADD', payload: item })
-    },
-    removeFromCart: (item) => {
-      dispatch({ type: 'REMOVE', payload: item })
+    // },
+    // removeFromCart: (item) => {
+    //   dispatch({ type: 'REMOVE', payload: item })
     }
   }
 }
