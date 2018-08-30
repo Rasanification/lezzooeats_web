@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import { Grid, Card, } from 'semantic-ui-react'
-import ProductModal from './ProductModal';
+// import ProductModal from './ProductModal';
 import { connect } from 'react-redux'
 
 class ProductCard extends Component {
@@ -13,7 +13,7 @@ class ProductCard extends Component {
 
     return (
 
-      <Card fluid="fluid" style={{boxShadow: '0px 3px 10px #cecece',}}>
+      <Card fluid="fluid" style={{boxShadow: '0px 3px 10px #cecece',color:'black'}} onClick={this.props.onClick}>
         <Card.Content>
           <Grid columns={2}>
             <Grid.Column width={10}>
@@ -30,7 +30,7 @@ class ProductCard extends Component {
             </Grid.Column>
           </Grid>
         </Card.Content>
-        <ProductModal product={product}/>
+
       </Card>
     )
   }

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Button, Header, Icon, Modal, Form, Radio, Grid, Label } from 'semantic-ui-react'
 import { connect } from 'react-redux'
+import ProductCard from './ProductCard';
 
 class ProductModal extends Component {
   constructor(props) {
@@ -39,7 +40,7 @@ class ProductModal extends Component {
       <Modal
         dimmer={dimmer} open={open} onClose={this.close}
         size='small'
-        trigger={<Button positive onClick={this.show(true)} >Order</Button>}
+        trigger={<ProductCard product={product} onClick={this.show(true)}/>}
         style={{ margin: 0, padding: 0 }}
       >
         <Modal.Content scrolling style={{ maxHeight: 500, height: 500, margin: 0, padding: 0 }}>
@@ -141,5 +142,5 @@ function mapDispatchToProps(dispatch) {
     }
   }
 }
-
+{/* <Button positive  onClick={this.show(true)}>Order</Button> */}
 export default connect(mapStateToProps, mapDispatchToProps)(ProductModal)

@@ -2,6 +2,8 @@ import React, {Component} from 'react'
 import { Card, Button, Grid, Label } from 'semantic-ui-react'
 import { connect } from 'react-redux'
 
+import ProductModal from './ProductModal';
+
 class CheckoutCard extends Component {
   // componentDidMount() {
   //   alert(this.props.cart)
@@ -32,9 +34,9 @@ class CheckoutCard extends Component {
                     <Grid.Column width={7}>
                       <div>
                         <a style={{color:'black'}}>
-
-                        <h4>{product.product_name.en}</h4>
-                        <p>Tango, fries,fries </p></a>
+                          <h4>{product.product_name.en}</h4>
+                          <p>Tango, fries,fries </p>
+                        </a>
                         <Button onClick={() => this.props.removeFromCart(product) } style={{background:'transparent'}}> <a>Remove </a> </Button>
                       </div>
                     </Grid.Column>

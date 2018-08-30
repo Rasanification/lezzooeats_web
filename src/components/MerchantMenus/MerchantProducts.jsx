@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { Grid, Menu,Sticky, Segment} from 'semantic-ui-react';
 import '../../resources/MerchantMenus.css';
 import Scrollspy from 'react-scrollspy';
-import ProductCard from './ProductCard';
+// import ProductCard from './ProductCard';
+import ProductModal from './ProductModal';
 import CheckoutCard from './CheckoutCard';
 
 export default class MerchantProducts extends Component {
@@ -53,7 +54,8 @@ export default class MerchantProducts extends Component {
                               if (product.product_category === category.product_category_id) {
                                 return (
                                   <Grid.Column width={8}>
-                                    <ProductCard product={product} />
+                                    {/* <ProductCard product={product} />*/}
+                                    <ProductModal product={product}/>
                                   </Grid.Column>
                                 )
                               }
